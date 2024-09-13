@@ -3,7 +3,7 @@ from kivymd.theming import ThemeManager
 import random
 
 from FrontEnd import *
-from BackEnd import *
+# from BackEnd import *
 
 
 class Reminder(MDApp):

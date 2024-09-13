@@ -1,38 +1,36 @@
 {
-  "task": [
-    {
-      "title": "Task 01",
-      "subject": "subject",
-      "category": "lab",
-      "description": "Multiline string",
-      "start_date": [2024,3,21],
-      "end_date": [2024,3,25]
-    },
-    {
-      "title": "Task 02",
-      "subject": "example",
-      "category": "lab",
-      "description": "Multiline string",
-      "start_date": [2024,3,21],
-      "end_date": [2024,3,25]
-    }
-  ],
-  "complete": [
-    {
-      "title": "Task 01",
-      "subject": "subject",
-      "category": "lab",
-      "description": "Multiline string",
-      "start_date": [2024,3,21],
-      "end_date": [2024,3,25]
-    },
-    {
-      "title": "Task 02",
-      "subject": "example",
-      "category": "lab",
-      "description": "Multiline string",
-      "start_date": [2024,3,21],
-      "end_date": [2024,3,25]
-    }
-  ]
+ "tasks": [
+  {
+   "id": 1,
+   "title": "Something",
+   "subject": "Subject",
+   "category": "Category",
+   "description": "long description"
+  },
+  {
+   "id": 2,
+   "title": "Something",
+   "subject": "Subject",
+   "category": "Category",
+   "description": "long description"
+  },
+  {
+   "id": 4,
+   "title": "Something",
+   "subject": "Subject",
+   "category": "Category",
+   "description": "long description"
+  }
+ ],
+ "doing": [],
+ "missed_task": [],
+ "completed": [
+  {
+   "id": 3,
+   "title": "Something",
+   "subject": "Subject",
+   "category": "Category",
+   "description": "long description"
+  }
+ ]
 }
