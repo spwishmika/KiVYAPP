@@ -1,7 +1,6 @@
 from kivy.lang.builder import Builder
 from kivy.uix.screenmanager import ScreenManager
 from kivymd.uix.boxlayout import MDBoxLayout
-from kivymd.uix.screen import MDScreen
 
 from FrontEnd.Components.Task.Task import Task
 from FrontEnd.Screens.CreateScreen.create_screen import CreateScreen
@@ -27,7 +26,7 @@ Builder.load_string("""
                     adaptive_height:True
                     orientation:"vertical"
                     Task:
-                    
+
             MDRelativeLayout:
                 MDAnchorLayout:
                     anchor_x:'right'
@@ -38,8 +37,7 @@ Builder.load_string("""
                         MDFloatingActionButton:
                             icon: "pen"
                             on_press:root.create_screen()
-                        
-    
+
 """)
 
 
@@ -61,5 +59,4 @@ class TaskScreen(MDBoxLayout):
         create_screen = CreateScreen(name="create")
         screen_manager.add_widget(create_screen)
         screen_manager.current = "create"
-
 
