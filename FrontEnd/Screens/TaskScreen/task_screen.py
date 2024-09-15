@@ -4,6 +4,7 @@ from kivymd.uix.boxlayout import MDBoxLayout
 
 from FrontEnd.Components.Task.Task import Task
 from FrontEnd.Screens.CreateScreen.create_screen import CreateScreen
+from BackEnd.data_base import DATA
 
 Builder.load_string("""
 #:import ScrollEffect kivy.effects.scroll.ScrollEffect
@@ -25,7 +26,6 @@ Builder.load_string("""
                     size_hint:1,None
                     adaptive_height:True
                     orientation:"vertical"
-                    Task:
 
             MDRelativeLayout:
                 MDAnchorLayout:
@@ -43,14 +43,22 @@ Builder.load_string("""
 
 class TaskScreen(MDBoxLayout):
 
-    def on_enter(self, *args):
-        # TODO: on enter read all json task and make object and add all to the screen.
-        # TODO: fist remove all elements. and add
-        pass
+    def on_kv_post(self, base_widget):
+        task = DATA.get_task_data()
+        if len(task["tasks"]) == 0:
+            self.ids.task_list.add_widget(Task())
+        self.add_task()
 
-    def add_task(self, widget):
-        if isinstance(widget, Task):
-            self.ids.task_list.add_widget(widget)
+    def add_task(self):
+        task = DATA.get_task_data()
+        for tasks in task["tasks"]:
+            create_task_obj = Task(
+                title=tasks["title"],
+                category=tasks["category"],
+                subject=tasks["subject"],
+                description=tasks["description"]
+            )
+            self.ids.task_list.add_widget(create_task_obj)
 
     def create_screen(self):
         screen_manager: ScreenManager = self.ids.task_screen_manager
@@ -59,4 +67,3 @@ class TaskScreen(MDBoxLayout):
         create_screen = CreateScreen(name="create")
         screen_manager.add_widget(create_screen)
         screen_manager.current = "create"
-

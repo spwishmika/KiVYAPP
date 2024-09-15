@@ -3,7 +3,7 @@ import json
 
 
 class DATA:
-    _path = "../data/task.json"
+    _path = "data/task.json"
     with open(_path, "r") as _data:
         _task_data: dict = json.load(_data)
 
